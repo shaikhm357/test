@@ -1,0 +1,1341 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+    :root {
+        --primary-color: #3498db;
+        --font-size: 0.7rem;
+        --primary-font-weight: 480;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 0;
+        /* border: 1px solid red; */
+        font-family: 'Montserrat', sans-serif;
+        font-size: var(--font-size);
+    }
+
+    /* -------------------- Page Breaks -------------------- */
+    .page_break_avoid {
+        page-break-inside: avoid;
+    }
+
+    .container {
+        text-align: center;
+        border: 2px solid #B8B8B8;
+        padding: 1rem;
+        border-radius: 0.8rem;
+        width: 95%;
+        /* min-height: 90%; */
+    }
+
+    /* -------------------- banner -------------------- */
+    .banner__container {
+        overflow: hidden;
+    }
+
+    .banner__container--child01 {
+        color: #fff;
+        width: 100%;
+        overflow: hidden;
+        transform: skewY(-2deg);
+        transform-origin: 0;
+        background: #000;
+        border-radius: 0 0 50px 50px;
+    }
+
+    .banner__container--child02 {
+        transform: skewY(2deg);
+        padding: 2rem;
+        overflow: hidden;
+    }
+
+
+    /* -------------------- headline -------------------- */
+    .headline {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        margin-bottom: 1rem;
+        /* border: 1px solid pink; */
+    }
+
+    .headline>span {
+        font-weight: var(--primary-font-weight);
+        font-size: 1.4rem;
+        padding-bottom: 0.4rem;
+    }
+
+    .headline__product--name {
+        padding: 0.4rem;
+        font-weight: var(--primary-font-weight);
+        font-size: 0.8rem;
+        border-top: 2px solid var(--primary-color);
+    }
+
+    /* -------------------- Logo & product container -------------------- */
+    .logo_product__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo_product__container--logo img {
+        width: 8rem;
+        height: 4rem;
+    }
+    .logo_product__container--logo {
+        height: 5.5rem;
+    }
+
+    /* -------------------- Quote Details Section -------------------- */
+    .quote-details {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        justify-content: space-between;
+        margin-bottom: .5rem;
+    }
+
+    /* Each quote item should take up 1/3rd of the width */
+    .quote-item {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        box-sizing: border-box;
+        word-wrap: break-word;
+        /* Ensure long text breaks to the next line */
+        overflow-wrap: break-word;
+        /* Ensure long text breaks to the next line */
+        max-width: 100%;
+        /* Make sure it doesn't expand beyond container width */
+    }
+
+    /* For strong tag, keep text left-aligned and bold */
+    .quote-item strong {
+        font-weight: var(--primary-font-weight);
+        text-align: left;
+        padding-right: 10px;
+        white-space: nowrap;
+        /* Prevent strong text from wrapping */
+    }
+
+    /* For span tag, let it wrap and keep it left-aligned */
+    .quote-item span {
+        font-weight: 400;
+        text-align: left;
+        white-space: normal;
+        /* Allow span text to wrap */
+    }
+
+    /* -------------------- options_container -------------------- */
+    .option_name {
+        margin: 1rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: .5rem;
+        text-align: center;
+        border-radius: 10px;
+        border: 2px dotted var(--primary-color);
+    }
+
+    .option_name .option {
+        position: relative;
+        font-weight: var(--primary-font-weight);
+        font-size: 0.8rem;
+        margin-right: 1rem;
+    }
+
+    .option_name .location {
+        position: relative;
+        font-size: 0.8rem;
+    }
+
+    .option_name .separator {
+        display: inline-block;
+        width: 1px;
+        height: 0.6rem;
+        background-color: var(--primary-color);
+        margin: 0 1rem;
+    }
+
+    .option_name .location {
+        font-style: italic;
+        color: var(--secondary-color);
+    }
+
+    .option_name .option,
+    .option_name .location {
+        line-height: 1.4;
+    }
+
+    /* -------------------- suminsured__container -------------------- */
+    .suminsured__container {
+        border-radius: 0.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .suminsured__container--title {
+        border: 1.4px solid var(--primary-color);
+        /* width: 50rem; */
+        padding: 0.4rem;
+        font-weight: var(--primary-font-weight);
+    }
+
+    .suminsured__container--header,
+    .suminsured__container--value {
+        display: flex;
+        /* border: 1.4px solid var(--primary-color); */
+    }
+
+    .suminsured__container--header>div>span {
+        font-weight: var(--primary-font-weight);
+    }
+
+    .suminsured__container--value>div:nth-child(1)>span {
+        font-weight: var(--primary-font-weight);
+    }
+
+    .suminsured__container--header>div,
+    .suminsured__container--value>div {
+        padding: 0.2rem 0.4rem;
+        border: 1.4px solid var(--primary-color);
+        width: 100%;
+    }
+
+    .suminsured__container--value>div:nth-child(5) {
+        font-weight: var(--primary-font-weight);
+    }
+
+    /* -------------------- gst_net_total_premium__container -------------------- */
+    .gst_net_total_premium__container {
+        border: 1.4px solid var(--primary-color);
+        padding: 1rem;
+        border-radius: 0.6rem;
+        margin-bottom: 2rem;
+    }
+
+    .gst_net_total_premium__container--title {
+        border: 1.4px solid var(--primary-color);
+        /* width: 50rem; */
+        padding: 0.4rem;
+        font-weight: var(--primary-font-weight);
+    }
+
+    .gst_net_total_premium__container--value {
+        text-align: right;
+    }
+
+    .gst_net_total_premium__container--header,
+    .gst_net_total_premium__container--value {
+        display: flex;
+        /* border: 1.4px solid var(--primary-color); */
+    }
+
+    .gst_net_total_premium__container--header>div>span {
+        font-weight: var(--primary-font-weight);
+    }
+
+    .gst_net_total_premium__container--value>div:nth-child(1)>span {
+        font-weight: var(--primary-font-weight);
+    }
+
+    .gst_net_total_premium__container--header>div,
+    .gst_net_total_premium__container--value>div {
+        padding: 0.2rem 0.4rem;
+        border: 1.4px solid var(--primary-color);
+        /* width: 30%; */
+        flex: 1;
+    }
+
+    .gst_net_total_premium__container--value>div:nth-child(5) {
+        font-weight: var(--primary-font-weight);
+    }
+
+    /* -------------------- note_1__container -------------------- */
+
+    .note_1__container {
+        font-size: var(--font-size);
+        margin-bottom: 2rem;
+        padding: 0.6rem;
+        border: 2px dotted grey;
+        border-radius: 0.8rem;
+        text-align: left;
+        color: grey;
+    }
+    
+
+    .multiple_occupancies--count {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: var(--font-size);
+        color: #000;
+        font-style: italic;
+        margin-bottom: 1rem;
+    }
+
+    .multiple_occupancies--count>span {
+        padding: 0.8rem;
+        border: 1px solid #B8B8B8;
+        border-radius: 0.6rem;
+    }
+
+    /* -------------------- risk_desc_coverage__container -------------------- */
+    .risk_desc_coverage__container {
+        border-radius: 0.6rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .risk_desc_coverage__container--title {
+        /* width: 50rem; */
+        padding: 0.4rem;
+        font-weight: var(--primary-font-weight);
+    }
+
+    .risk_desc_coverage__container--description {
+        border: 1.4px solid var(--primary-color);
+        /* width: 50rem; */
+        padding: 0.4rem;
+    }
+
+    /* -------------------- risk_desc__container -------------------- */
+    .risk_desc__container {
+        /* border: 1.4px solid var(--primary-color);
+        padding: 1rem; */
+        border-radius: 0.6rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .risk_desc__container--title {
+        border: 1.4px solid var(--primary-color);
+        /*  width: 50rem;  */
+        padding: 0.4rem;
+        font-weight: var(--primary-font-weight);
+    }
+
+    .risk_desc__container--description {
+        border: 1.4px solid var(--primary-color);
+        padding: 0.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .risk_desc__container--description>div {
+        flex: 0.5;
+    }
+
+    .risk_desc__container--description>div:nth-child(2) {
+        text-align: end;
+    }
+
+    /* -------------------- perils_deleted__container -------------------- */
+    .perils_deleted__container {
+        /* border: 1.4px solid var(--primary-color);
+        padding: 1rem; */
+        border-radius: 0.6rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .perils_deleted__container--title {
+        border: 1.4px solid var(--primary-color);
+        /* width: 50rem; */
+        padding: 0.4rem;
+        font-weight: var(--primary-font-weight);
+    }
+
+    .perils_deleted__container--description {
+        border: 1.4px solid var(--primary-color);
+        padding: 0.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .perils_deleted__container--description>div {
+        flex: 0.5;
+    }
+
+    .perils_deleted__container--description>div:nth-child(2) {
+        text-align: end;
+    }
+
+    /* -------------------- loc_and_occupancy_addr__container -------------------- */
+    .loc_and_occupancy_addr__container {
+        /* border: 1.4px solid var(--primary-color);
+        padding: 1rem; */
+        border-radius: 0.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .loc_and_occupancy_addr__container--header,
+    .loc_and_occupancy_addr__container--value {
+        display: flex;
+    }
+
+    .loc_and_occupancy_addr__container--header>div>span {
+        font-weight: var(--primary-font-weight);
+    }
+
+    .loc_and_occupancy_addr__container--value>div:nth-child(1)>span {
+        font-weight: var(--primary-font-weight);
+    }
+
+    .loc_and_occupancy_addr__container--header>div,
+    .loc_and_occupancy_addr__container--value>div {
+        padding: 0.2rem;
+        border: 1.4px solid var(--primary-color);
+        flex: 0.3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        justify-items: center;
+        gap: 1rem;
+    }
+
+    .loc_and_occupancy_addr__container--Flexa_RSMD_STFI,
+    .loc_and_occupancy_addr__container--Earthquake_Terrorism {
+        display: flex;
+        justify-content: space-between;
+        justify-items: center;
+    }
+
+    .loc_and_occupancy_addr__container--Flexa_RSMD_STFI>div,
+    .loc_and_occupancy_addr__container--Earthquake_Terrorism>div {
+        padding: 0.2rem;
+        border: 1.4px solid var(--primary-color);
+        flex: 0.5;
+    }
+
+    .loc_and_occupancy_addr__container--value>div>div:first-child {
+        border: none;
+    }
+
+    .loc_and_occupancy_addr__container--value>div>div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        border-top: 1.4px solid var(--primary-color);
+    }
+
+    .loc_and_occupancy_addr__container--Flexa_RSMD_STFI>div>div:nth-child(1),
+    .loc_and_occupancy_addr__container--Earthquake_Terrorism>div>div:nth-child(1) {
+        border-bottom: 1.4px solid var(--primary-color);
+    }
+
+    .loc_and_occupancy_addr__container--value>div:nth-child(3),
+    .loc_and_occupancy_addr__container--value>div:nth-child(4) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: var(--primary-font-weight);
+    }
+
+    /* -------------------- clause_with_si__container -------------------- */
+    .clause_with_si__container {
+        /* border: 1.4px solid var(--primary-color);
+        padding: 1rem; */
+        border-radius: 0.6rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .clause_with_si__container--child>div:nth-child(1) {
+        font-weight: var(--primary-font-weight);
+    }
+
+    .clause_with_si__container--description {
+        border: 1.4px solid var(--primary-color);
+        padding: 0.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .clause_with_si__container--description>div {
+        flex: 0.5;
+    }
+
+    .clause_with_si__container--description>div:nth-child(2) {
+        text-align: end;
+    }
+
+    /* -------------------- declaration__container -------------------- */
+    .declaration__container {
+        /* border: 1.4px solid var(--primary-color);
+        padding: 1rem; */
+        border-radius: 0.6rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .declaration__container--title {
+        border: 1.4px solid var(--primary-color);
+        /* width: 50rem; */
+        padding: 0.4rem;
+        font-weight: var(--primary-font-weight);
+    }
+
+    .declaration__container--description {
+        border: 1.4px solid var(--primary-color);
+        padding: 0.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .declaration__container--description>div {
+        flex: 0.5;
+    }
+
+    .declaration__container--description>div:nth-child(2) {
+        text-align: end;
+    }
+
+    /* -------------------- expired_details__container -------------------- */
+    .expired_details__container {
+        /* border: 1.4px solid var(--primary-color);
+        padding: 1rem; */
+        border-radius: 0.6rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .expired_details__container--title {
+        border: 1.4px solid var(--primary-color);
+        /* width: 50rem; */
+        padding: 0.4rem;
+        font-weight: var(--primary-font-weight);
+    }
+
+    .expired_details__container--description {
+        border: 1.4px solid var(--primary-color);
+        padding: 0.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .expired_details__container--description>div {
+        flex: 0.5;
+    }
+
+    .expired_details__container--description>div:nth-child(2) {
+        text-align: end;
+    }
+
+    /* -------------------- deductibles__container -------------------- */
+    .deductibles__container {
+        /* border: 1.4px solid var(--primary-color);
+        padding: 1rem; */
+        border-radius: 0.6rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .deductibles__container--child>div:nth-child(2)>div {
+        font-weight: var(--primary-font-weight);
+        text-align: center;
+    }
+
+    .deductibles__container--title {
+        border: 1.4px solid var(--primary-color);
+        /* width: 50rem; */
+        padding: 0.4rem;
+        font-weight: var(--primary-font-weight);
+    }
+
+    .deductibles__container--description {
+        border: 1.4px solid var(--primary-color);
+        padding: 0.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .deductibles__container--description>div {
+        flex: 0 1 33.33%;
+    }
+
+    .deductibles__container--description>div:nth-child(3) {
+        text-align: center;
+    }
+
+    /* -------------------- project_details__container -------------------- */
+    .project_details__container {
+        /* border: 1.4px solid var(--primary-color);
+        padding: 1rem; */
+        border-radius: 0.6rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .project_details__container--title {
+        border: 1.4px solid var(--primary-color);
+        /* width: 50rem; */
+        padding: 0.4rem;
+        font-weight: var(--primary-font-weight);
+    }
+
+    .project_details__container--description {
+        border: 1.4px solid var(--primary-color);
+        padding: 0.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .project_details__container--description>div {
+        flex: 0.5;
+    }
+
+    .project_details__container--description>div:nth-child(2) {
+        text-align: end;
+    }
+
+    /* -------------------- installment__container -------------------- */
+    .installment__container {
+        /* border: 1.4px solid var(--primary-color);
+        padding: 1rem; */
+        border-radius: 0.6rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .installment__container--child>div:nth-child(2)>div {
+        font-weight: var(--primary-font-weight);
+    }
+
+    .installment__container--title {
+        border: 1.4px solid var(--primary-color);
+        /* width: 50rem; */
+        padding: 0.4rem;
+        font-weight: var(--primary-font-weight);
+    }
+
+    .installment__container--description {
+        border: 1.4px solid var(--primary-color);
+        padding: 0.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .installment__container--description>div {
+        flex: 0 1 33.33%;
+        text-align: center;
+    }
+
+    /* -------------------- quoteLocationAddonCover__container -------------------- */
+    .quoteLocationAddonCover__container {
+        /* border: 1.4px solid var(--primary-color);
+        padding: 1rem; */
+        border-radius: 0.6rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    /* .quoteLocationAddonCover__container--child>div:nth-child(2)>div {
+        font-weight: var(--primary-font-weight);
+    } */
+
+    .quoteLocationAddonCover__container--title {
+        border: 1.4px solid var(--primary-color);
+        /* width: 50rem; */
+        padding: 0.4rem;
+        font-weight: var(--primary-font-weight);
+        text-align: center;
+    }
+
+    .quoteLocationAddonCover__container--description {
+        border: 1.4px solid var(--primary-color);
+        padding: 0.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .quoteLocationAddonCover__container--description>div {
+        flex: 0.5;
+        /* text-align: center; */
+    }
+
+    /* -------------------- dotted__container -------------------- */
+
+    .dotted__container>hr {
+        border: none;
+        border-top: 0.2rem dotted var(--primary-color);
+        background-color: #fff;
+        margin: 1rem 0 2rem 0;
+    }
+
+    /* -------------------- clause__container -------------------- */
+    .clause__container {
+        /* border: 1.4px solid var(--primary-color);
+        padding: 1rem; */
+        border-radius: 0.6rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .clause__container--title {
+        border: 1.4px solid var(--primary-color);
+        padding: 0.4rem;
+        font-weight: var(--primary-font-weight);
+        background-color: var(--primary-light-color);
+        /* Optional background color for title */
+    }
+
+    .clause__container--description {
+        border-top: 1.4px solid var(--primary-color);
+        /* Added top border for separation */
+        padding: 0.4rem;
+        margin-top: 1rem;
+    }
+
+    .clause__point {
+        margin-bottom: 0.5rem;
+        padding: 0.3rem 0;
+        font-size: 0.8rem;
+        line-height: 1.5;
+        border-left: 3px solid var(--primary-color);
+        /* Optional accent line for points */
+        padding-left: 0.6rem;
+    }
+
+    /* -------------------- terms_and_condition__container -------------------- */
+    .terms_and_condition__container {
+        border: 1.4px solid var(--primary-color);
+        padding: 1rem;
+        border-radius: 0.6rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        text-align: left;
+    }
+
+    .terms_and_condition__container--headline {
+        border: 1.4px solid var(--primary-color);
+        padding: 0.4rem;
+        font-weight: var(--primary-font-weight);
+        background-color: var(--primary-light-color);
+        font-size: 1rem;
+        text-align: center;
+        /* Optional background color for title */
+    }
+
+    .terms_and_condition__container--title {
+        border: 1.4px solid var(--primary-color);
+        padding: 0.4rem;
+        font-weight: var(--primary-font-weight);
+        background-color: var(--primary-light-color);
+        /* Optional background color for title */
+    }
+
+    .terms_and_condition__container--description {
+        border-top: 1.4px solid var(--primary-color);
+        /* Added top border for separation */
+        padding: 0.4rem;
+        margin-top: 1rem;
+    }
+
+    .terms_and_condition__point {
+        margin-bottom: 0.5rem;
+        padding: 0.3rem 0;
+        font-size: 0.6rem;
+        line-height: 1.5;
+        border-left: 3px solid var(--primary-color);
+        /* Optional accent line for points */
+        padding-left: 0.6rem;
+    }
+
+    /* -------------------- claimexperience__container -------------------- */
+    .claimexperience__container {
+        border: 1.4px solid var(--primary-color);
+        padding: 1rem;
+        border-radius: 0.6rem;
+        margin-bottom: 2rem;
+        text-align: left;
+    }
+
+    .claimexperience__container--title {
+        border: 1.4px solid var(--primary-color);
+        padding: 0.4rem;
+    }
+
+    .claimexperience__container--child {
+        display: flex;
+    }
+
+    .claimexperience__container--child>div {
+        padding: 0.2rem 0.4rem;
+        border: 1.4px solid var(--primary-color);
+        width: 25%;
+    }
+
+    .claimexperience__container--child>div:nth-child(5) {
+        font-weight: var(--primary-font-weight);
+    }
+
+    /* -------------------- note__container -------------------- */
+    .note__container {
+        padding: 1rem;
+        text-align: left;
+    }
+</style>
+<div class="container page_break_avoid">
+    <!-- ----------------------- banner ----------------------- -->
+    <div class="banner__container">
+        <div class="banner__container--child01">
+            <div class="banner__container--child02">
+                <!-- ----------------------- logo_product__container ----------------------- -->
+                <div class="logo_product__container">
+                    <div class="logo_product__container--logo">
+                        <a href="/apac/en" style="display: grid; justify-content: center;">
+                            <img src="https://lockbox.lockton.com/m/30841865527c2fe2/original/logo-white.svg"
+                                alt="Lockton Logo" class="logo-img flex-center" style="width: 14rem;">
+                            <img src="https://lockbox.lockton.com/m/2556945d327fc5ac/original/logo-scrolling-white.svg"
+                                alt="Lockton Logo" class="flex-center logoLetter" style="display: flex; justify-content: center; margin-left: 3rem; position: relative; bottom: 46px;">
+                        </a>
+                        <!-- <img src="{{logo_product__container.logo.src}}" alt="{{logo_product__container.logo.alt}}"> -->
+                    </div>
+                </div>
+                <!-- ----------------------- headline ----------------------- -->
+                <div class="headline">
+                    <span>{{headline.text}}</span>
+                    <div class="headline__product--name">
+                        <span>{{headline.product}}</span>
+                    </div>
+                </div>
+                <!-- ----------------------- logo_product__container ----------------------- -->
+                <!-- <div class="logo_product__container">
+                    <div class="logo_product__container--logo">
+                        <img src="{{logo_product__container.logo.src}}" alt="{{logo_product__container.logo.alt}}">
+                    </div>
+                </div> -->
+                <!-- ----------------------- Quote Information ----------------------- -->
+                <div class="quote-details">
+                    <div class="quote-item">
+                        <strong>Reference No</strong>
+                        <span>{{quote_details.quote_no}}</span>
+                    </div>
+                    <div class="quote-item">
+                        <strong>Policy Type</strong>
+                        <span>{{quote_details.policy_type}}</span>
+                    </div>
+                    <!-- <div class="quote-item">
+                        <strong>IMD</strong>
+                        <span>{{quote_details.imd}}</span>
+                    </div> -->
+                    <div class="quote-item">
+                        <strong>Proposer Name</strong>
+                        <span>{{quote_details.proposer_name}}</span>
+                    </div>
+                    <div class="quote-item">
+                        <strong>Policy Inception Date</strong>
+                        <span>{{quote_details.policy_inception_date}}</span>
+                    </div>
+                    <div class="quote-item">
+                        <strong>Policy Period</strong>
+                        <span>{{quote_details.policy_period}}</span>
+                    </div>
+                    <!-- <div class="quote-item">
+                        <strong>Hypothecation</strong>
+                        <span>{{quote_details.hypothecation}}</span>
+                    </div> -->
+                    <!-- <div class="quote-item">
+                        <strong>Correspondence Address</strong>
+                        <span>{{quote_details.correspondence_address}}</span>
+                    </div> -->
+                    <div class="quote-item">
+                        <strong>RFP Issued Date</strong>
+                        <span>{{quote_details.quotation_issued}}</span>
+                    </div>
+                    <!-- <div class="quote-item">
+                        <strong>Number of Locations</strong>
+                        <span>{{quote_details.number_of_locations}}</span>
+                    </div> -->
+                    <!-- <div class="quote-item">
+                        <strong>Branch Name</strong>
+                        <span>{{quote_details.branch_name}}</span>
+                    </div> -->
+                    <div class="quote-item"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------------- options_container ----------------------- -->
+    {{#each options_container}}
+    <div class="options_container">
+        <div class="option_name page_break_avoid">
+            <span class="option">{{option_name}}</span>
+            <span class="separator"></span>
+            <span class="location">No of Locations: {{number_of_locations}}</span>
+        </div>
+        <!-- ----------------------- suminsured__container ----------------------- -->
+        <div class="suminsured__container page_break_avoid">
+            <div class="suminsured__container--title">
+                <span>{{suminsured.title}}</span>
+            </div>
+            <div class="suminsured__container--header">
+                <div class="">
+                    <span>Sections/Coversssssss</span>
+                </div>
+                <div class="">
+                    <span>Sum Insured(₹)ssssssssssss</span>
+                </div>
+            </div>
+
+            <!-- Loop through each section -->
+            {{#each suminsured.sections}}
+            <div class="suminsured__container--value">
+                <div class="">
+                    <span>{{section}}</span>
+                </div>
+                <div class="">
+                    <span>{{sum_insured}}</span>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <!-- ----------------------- gst_net_total_premium__container | part 02 ----------------------- -->
+        {{#if suminsured.isAllowedToShow}}
+        <div class="gst_net_total_premium__container">
+            <div class="gst_net_total_premium__container--header">
+                <div class="">
+                    <span>Net Premium(₹)</span>
+                </div>
+                <div class="">
+                    <span>GST @ 18%</span>
+                </div>
+                <div class="">
+                    <span>Total Premium(₹)</span>
+                </div>
+            </div>
+
+            <div class="gst_net_total_premium__container--value">
+                <div class="">
+                    <span>{{suminsured.net_premium}}</span>
+                </div>
+                <div class="">
+                    <span>{{suminsured.gst}}</span>
+                </div>
+                <div class="">
+                    <span>{{suminsured.total_premium}}</span>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+        <!-- ============================= commonQuoteOptionDATA ============================= -->
+        <!-- ----------------------- declaration__container ----------------------- -->
+        <div class="declaration__container page_break_avoid">
+            <div class="declaration__container--child">
+                <div class="declaration__container--title">
+                    <span>{{commonQuoteOptionDataResult.declarationDropdown.title}}</span>
+                </div>
+
+                <div class="declaration__container--description">
+                    <div class=""><span>{{commonQuoteOptionDataResult.declarationDropdown.value}}</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ----------------------- expired_details__container ----------------------- -->
+        {{#if commonQuoteOptionDataResult.expired_details.isExpiringAllowedToShow}}
+        <div class="expired_details__container page_break_avoid">
+            <div class="expired_details__container--child">
+                <div class="expired_details__container--title">
+                    <span>{{commonQuoteOptionDataResult.expired_details.title}}</span>
+                </div>
+
+                {{#each commonQuoteOptionDataResult.expired_details.expired}}
+                <div class="expired_details__container--description">
+                    <div class=""><span>{{this.name}}</span></div>
+                    <div class=""><span>{{this.value}}</span></div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        {{/if}}
+
+        <!-- ----------------------- deductibles__container ----------------------- -->
+        <div class="deductibles__container page_break_avoid">
+            <div class="deductibles__container--child">
+                <div class="deductibles__container--title">
+                    <span>{{commonQuoteOptionDataResult.deductibles.title}}</span>
+                </div>
+
+                {{#each commonQuoteOptionDataResult.deductibles.expired}}
+                <div class="deductibles__container--description">
+                    <div class=""><span>{{this.location_wise_sum_insured_pd_bi}}</span></div>
+                    <div class=""><span>{{this.claim_percentage}}</span></div>
+                    <div class=""><span>{{this.sfsp_product}}</span></div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <!-- ----------------------- project_details__container ----------------------- -->
+        {{#if commonQuoteOptionDataResult.project_details.isProjectDetailsAllowedToShow}}
+        <div class="project_details__container page_break_avoid">
+            <div class="project_details__container--child">
+                <div class="project_details__container--title">
+                    <span>{{commonQuoteOptionDataResult.project_details.title}}</span>
+                </div>
+
+                {{#each commonQuoteOptionDataResult.project_details.pro_details}}
+                <div class="project_details__container--description">
+                    <div class=""><span>{{this.name}}</span></div>
+                    <div class=""><span>{{this.value}}</span></div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        {{/if}}
+
+        <!-- ----------------------- installment__container ----------------------- -->
+        {{#if commonQuoteOptionDataResult.installmentObj.isProjectDetailsAllowedToShow}}
+        <div class="installment__container page_break_avoid">
+            <div class="installment__container--child">
+                <div class="installment__container--title">
+                    <span>{{commonQuoteOptionDataResult.installmentObj.title}} | No of installment : {{commonQuoteOptionDataResult.installmentObj.numberOfInstallments}}</span>
+                </div>
+
+                {{#each commonQuoteOptionDataResult.installmentObj.installments}}
+                <div class="installment__container--description">
+                    <div class=""><span>{{this.installmentNumber}}</span></div>
+                    <div class=""><span>{{this.installmentDate}}</span></div>
+                    <div class=""><span>{{this.installmentAmount}}</span></div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        {{/if}}
+
+        <!-- ----------------------- quoteLocationAddonCover__container | Property ----------------------- -->
+        <div class="quoteLocationAddonCover__container page_break_avoid">
+            <div class="quoteLocationAddonCover__container--child">
+                <div class="quoteLocationAddonCover__container--title">
+                    <span>{{commonQuoteOptionDataResult.quoteLocationAddonCoversProperty.titleOfProperty}}</span>
+                </div>
+
+                {{#each commonQuoteOptionDataResult.quoteLocationAddonCoversProperty.quoteLocationAddonCoverProperty}}
+                <div class="quoteLocationAddonCover__container--description">
+                    <div class=""><span>{{this.name}}</span></div>
+                    <div class=""><span>{{this.description}}</span></div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <!-- ----------------------- quoteLocationAddonCover__container | Business ----------------------- -->
+        <div class="quoteLocationAddonCover__container page_break_avoid">
+            <div class="quoteLocationAddonCover__container--child">
+                <div class="quoteLocationAddonCover__container--title">
+                    <span>{{commonQuoteOptionDataResult.quoteLocationAddonCoversProperty.titleOfBusiness}}</span>
+                </div>
+
+                {{#each commonQuoteOptionDataResult.quoteLocationAddonCoversProperty.quoteLocationAddonCoverBusiness}}
+                <div class="quoteLocationAddonCover__container--description">
+                    <div class=""><span>{{this.name}}</span></div>
+                    <div class=""><span>{{this.description}}</span></div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        <!-- ============================= commonQuoteOptionDATA ============================= -->
+        <!-- ----------------------- note_1__container ----------------------- -->
+        <div class="note_1__container page_break_avoid">
+            <span> This Quotation is based on information
+                provided by the client/intermediary. It should be noted that, it is only a quotation and not an
+                offer for acceptance of business. No coverage is provided until the customer enters into a contract
+                with the company by paying premium in advance.</span>
+        </div>
+        <!-- ----------------------- Loop multiple_occupancies ----------------------- -->
+        {{#each multiple_occupancies}}
+        <!-- ----------------------- dotted__container ----------------------- -->
+        <div class="dotted__container">
+            <hr>
+        </div>
+        <div class="multiple_occupancies--count">
+            <span>Location No : {{indexPlusOne @index}}</span>
+        </div>
+        <!-- ----------------------- risk_desc_coverage__container ----------------------- -->
+        <!-- ----------------------- loc_and_occupancy_addr__container ----------------------- -->
+        <div class="loc_and_occupancy_addr__container">
+            {{#each location_and_occupancy}}
+            <div class="loc_and_occupancy_addr__container--header">
+                <div class="">
+                    <span>Location Address</span>
+                </div>
+                <div class="">
+                    <span>Occupancy</span>
+                </div>
+            </div>
+
+            <div class="loc_and_occupancy_addr__container--value">
+                <div class="">
+                    <div class="">
+                        <span>{{location_address}}</span>
+                    </div>
+                    <div class="loc_and_occupancy_addr__container--Flexa_RSMD_STFI">
+                        <div class="">
+                            <div class=""><span>{{flexa_rsmd}}</span></div>
+                            <!-- <div class=""><span>{{rsmd_value}}</span></div> -->
+                        </div>
+                        <div class="">
+                            <div class=""><span>{{stfi}}</span></div>
+                            <!-- <div class=""><span>{{stfi_value}}</span></div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="">
+                        <span>{{occupancy}}</span>
+                    </div>
+                    <div class="loc_and_occupancy_addr__container--Earthquake_Terrorism">
+                        <div class="">
+                            <div class=""><span>{{earthquake}}</span></div>
+                            <!-- <div class=""><span>{{earthquake_value}}</span></div> -->
+                        </div>
+                        <div class="">
+                            <div class=""><span>{{terrorism}}</span></div>
+                            <!-- <div class=""><span>{{terrorism_value}}</span></div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <!-- ----------------------- risk_desc__container ----------------------- -->
+
+        <!-- ----------------------- perils_deleted__container ----------------------- -->
+
+        <!-- ----------------------- clause_with_si__container ----------------------- -->
+
+        <!-- ----------------------- declaration__container ----------------------- -->
+        <div class="declaration__container">
+            <div class="declaration__container--child">
+                <div class="declaration__container--title">
+                    <span>{{declarationDropdown.title}}</span>
+                </div>
+
+                <div class="declaration__container--description">
+                    <div class=""><span>{{declarationDropdown.value}}</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ----------------------- expired_details__container ----------------------- -->
+        {{#if expired_details.isExpiringAllowedToShow}}
+        <div class="expired_details__container">
+            <div class="expired_details__container--child">
+                <div class="expired_details__container--title">
+                    <span>{{expired_details.title}}</span>
+                </div>
+
+                {{#each expired_details.expired}}
+                <div class="expired_details__container--description">
+                    <div class=""><span>{{this.name}}</span></div>
+                    <div class=""><span>{{this.value}}</span></div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        {{/if}}
+
+        <!-- ----------------------- deductibles__container ----------------------- -->
+        <div class="deductibles__container">
+            <div class="deductibles__container--child">
+                <div class="deductibles__container--title">
+                    <span>{{deductibles.title}}</span>
+                </div>
+
+                {{#each deductibles.expired}}
+                <div class="deductibles__container--description">
+                    <div class=""><span>{{this.location_wise_sum_insured_pd_bi}}</span></div>
+                    <div class=""><span>{{this.claim_percentage}}</span></div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <!-- ----------------------- project_details__container ----------------------- -->
+        {{#if project_details.isProjectDetailsAllowedToShow}}
+        <div class="project_details__container">
+            <div class="project_details__container--child">
+                <div class="project_details__container--title">
+                    <span>{{project_details.title}}</span>
+                </div>
+
+                {{#each project_details.pro_details}}
+                <div class="project_details__container--description">
+                    <div class=""><span>{{this.name}}</span></div>
+                    <div class=""><span>{{this.value}}</span></div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        {{/if}}
+
+        <!-- ----------------------- installment__container ----------------------- -->
+        {{#if installmentObj.isProjectDetailsAllowedToShow}}
+        <div class="installment__container">
+            <div class="installment__container--child">
+                <div class="installment__container--title">
+                    <span>{{installmentObj.title}} | No of installment : {{installmentObj.numberOfInstallments}}</span>
+                </div>
+
+                {{#each installmentObj.installments}}
+                <div class="installment__container--description">
+                    <div class=""><span>{{this.installmentNumber}}</span></div>
+                    <div class=""><span>{{this.installmentDate}}</span></div>
+                    <div class=""><span>{{this.installmentAmount}}</span></div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        {{/if}}
+
+        <!-- ----------------------- quoteLocationAddonCover__container | Property ----------------------- -->
+        <div class="quoteLocationAddonCover__container">
+            <div class="quoteLocationAddonCover__container--child">
+                <div class="quoteLocationAddonCover__container--title">
+                    <span>{{quoteLocationAddonCoversProperty.titleOfProperty}}</span>
+                </div>
+
+                {{#each quoteLocationAddonCoversProperty.quoteLocationAddonCoverProperty}}
+                <div class="quoteLocationAddonCover__container--description">
+                    <div class=""><span>{{this.name}}</span></div>
+                    <div class=""><span>{{this.description}}</span></div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <!-- ----------------------- quoteLocationAddonCover__container | Business ----------------------- -->
+        <div class="quoteLocationAddonCover__container">
+            <div class="quoteLocationAddonCover__container--child">
+                <div class="quoteLocationAddonCover__container--title">
+                    <span>{{quoteLocationAddonCoversProperty.titleOfBusiness}}</span>
+                </div>
+
+                {{#each quoteLocationAddonCoversProperty.quoteLocationAddonCoverBusiness}}
+                <div class="quoteLocationAddonCover__container--description">
+                    <div class=""><span>{{this.name}}</span></div>
+                    <div class=""><span>{{this.description}}</span></div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <!-- ----------------------- dotted__container ----------------------- -->
+        <div class="dotted__container">
+            <hr>
+        </div>
+        {{/each}}
+
+        <!-- ----------------------- claimexperience__container ----------------------- -->
+        <!-- <div class="claimexperience__container">
+            <div class="claimexperience__container--title">
+                <span>{{claim_experience.title}}</span>
+            </div>
+
+            <div class="claimexperience__container--child">
+                <div class=""><span>Year</span></div>
+                {{#each claim_experience.years}}
+                <div class=""><span>{{this}}</span></div>
+                {{/each}}
+            </div>
+
+            <div class="claimexperience__container--child">
+                <div class=""><span>Premium Paid</span></div>
+                {{#each claim_experience.premium_paid}}
+                <div class=""><span>{{this}}</span></div>
+                {{/each}}
+            </div>
+
+            <div class="claimexperience__container--child">
+                <div class=""><span>Claim Amount</span></div>
+                {{#each claim_experience.claim_amount}}
+                <div class=""><span>{{this}}</span></div>
+                {{/each}}
+            </div>
+
+            <div class="claimexperience__container--child">
+                <div class=""><span>No. of claims</span></div>
+                {{#each claim_experience.no_of_claims}}
+                <div class=""><span>{{this}}</span></div>
+                {{/each}}
+            </div>
+
+            <div class="claimexperience__container--child">
+                <div class=""><span>Nature of claim</span></div>
+                {{#each claim_experience.nature_of_claim}}
+                <div class=""><span>{{this}}</span></div>
+                {{/each}}
+            </div>
+        </div> -->
+    </div>
+    {{/each}}
+    <!-- ----------------------- clause__container ----------------------- -->
+    <!-- <div class="clause__container">
+        <div class="clause__container--title">
+                <span>{{coinsurance_clause.headline}}</span>
+            </div>
+        {{#each coinsurance_clause.clauses}}
+        <div class="clause__container--child">
+            <div class="clause__container--title">
+                <span>{{title}}</span>
+            </div>
+            <div class="clause__container--description">
+                {{#each content}}
+                <div class="clause__point">{{this}}</div>
+                {{/each}}
+            </div>
+        </div>
+        {{/each}}
+    </div> -->
+    <!-- ----------------------- terms_and_condition__container ----------------------- -->
+    {{#each terms_and_condition}}
+    <div class="terms_and_condition__container page_break_avoid">
+        <div class="terms_and_condition__container--headline">
+            <span>{{headline}}</span>
+        </div>
+        {{#each sections}}
+        <div class="terms_and_condition__container--child">
+            <div class="terms_and_condition__container--title">
+                <span>{{type}}</span>
+            </div>
+            <div class="terms_and_condition__container--description">
+                <div class="terms_and_condition__point">{{description}}</div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/each}}
+
+    <!-- ----------------------- note__container ----------------------- -->
+    <!-- <div class="note__container page_break_avoid">
+        <span>{{note.text}}</span>
+    </div> -->
+</div>
